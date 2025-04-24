@@ -1,0 +1,53 @@
+{
+    "theme_color":"#070803",
+    "background_color":"#f0c185",
+    "icons":[
+        {
+            "purpose":"maskable",
+            "sizes":"512x512",
+            "src":"/icon/icon512_maskable.png",
+            "type":"image/png"
+        },
+        {
+            "purpose":"any",
+            "sizes":"512x512",
+            "src":"/icon/icon512_rounded.png",
+            "type":"image/png"
+        },
+        {
+            "purpose": "any",
+            "sizes": "192x192",
+            "src": "/icon/192.png",
+            "type": "image/png"
+        },
+        {
+            "purpose": "any",
+            "sizes": "144x144",
+            "src": "/icon/144.png",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/image/Screenshot_Desktop.png",
+            "type": "image/jpg",
+            "sizes": "1903x921",
+            "form_factor": "wide"
+          },
+          {
+            "src": "/image/Screenshot_Mobile.png",
+            "type": "image/jpg",
+            "sizes": "405x817",
+            "form_factor": "narrow"
+          }
+    ],
+    "orientation":"any",
+    "display":"standalone",
+    "dir":"auto",
+    "lang":"pt-BR",
+    "description":"Alugue carros para todas as suas necessidades!",
+    "start_url":"/index.html",
+    "name":"FPElite Rent Cars - Locadora de Veículos",
+    "short_name":"FPElite",
+    "scope": "/"
+}

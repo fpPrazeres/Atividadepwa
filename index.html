@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> FP Elite Rent Cars</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="icon/icon-192x192.png">
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registrado com sucesso:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Falha ao registrar o ServiceWorker:', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>FP<span>Elite Rent Cars - Locadora de Veículos</span></h1>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#veiculos">Veículos</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Aluguel de Carros Premium</h2>
+                <p>Encontre o carro perfeito para suas necessidades</p>
+                <a href="#veiculos" class="btn">Ver Frota</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="veiculos" class="vehicles">
+        <div class="container">
+            <h2 class="section-title">Nossa Frota</h2>
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="economico">Econômicos</button>
+                <button class="filter-btn" data-filter="suv">SUVs</button>
+                <button class="filter-btn" data-filter="luxo">Luxo</button>
+            </div>
+            <div class="vehicle-grid">
+                <!-- Os veículos serão carregados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="services">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-car"></i>
+                    <h3>Aluguel Diário</h3>
+                    <p>Alugue por dias com quilometragem livre e seguro completo incluso.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Aluguel Mensal</h3>
+                    <p>Planos especiais para locações de longo período com descontos.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Retirada e Entrega</h3>
+                    <p>Buscamos e entregamos o veículo no local que você preferir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="location">
+        <div class="container">
+            <h2 class="section-title">Encontre uma Loja Próxima</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Nossas Lojas</h3>
+                    <p>Utilize sua localização para encontrar a loja mais próxima ou selecione uma de nossas unidades:</p>
+                    <select id="store-select">
+                        <option value="">Selecione uma loja</option>
+                        <option value="-23.5505,-46.6333">São Paulo - Centro</option>
+                        <option value="-22.9068,-43.1729">Rio de Janeiro - Copacabana</option>
+                        <option value="-12.9714,-38.5014">Salvador - Pituba</option>
+                    </select>
+                    <button id="get-location" class="btn">Usar Minha Localização</button>
+                </div>
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Informações</h3>
+                    <p><i class="fas fa-phone"></i> (81) 986634362</p>
+                    <p><i class="fas fa-envelope"></i> felipe.prazeres@edu.pe.senac.br</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. visconde de suassuna, 500 - Recife/PE</p>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Seu Nome" required>
+                    <input type="email" placeholder="Seu E-mail" required>
+                    <input type="tel" placeholder="Seu Telefone">
+                    <textarea placeholder="Sua Mensagem" required></textarea>
+                    <button type="submit" class="btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FP Elite Rent Cars</h3>
+                    <p>A melhor experiência em locação de veículos premium.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#veiculos">Veículos</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FP Elite Rent Cars. Todos os direitos reservados. Felipe Pimentel</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&loading=async&callback=initMap"></script>
+
+    https://www.google.com/maps/embed/v1/MAP_MODE?key=AIzaSyDSnXxnOld7_2Q_DOHrRMgn14QC8mm6m4o&parameters
+
+</body>
+</html>
